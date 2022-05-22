@@ -10,7 +10,7 @@ const ListTodos = () => {
     const todosContext = useContext(TodosContext)
     const { todos, setTodos } = todosContext   
 
-    const {isFetching,isError,data} = useQuery("todos",async()=>{
+    const {isError} = useQuery("todos",async()=>{
         const response = await api.get("/todoss")
         setTodos({...todos,todos:response.data, isLoading:false,isError:isError})
         return response.data

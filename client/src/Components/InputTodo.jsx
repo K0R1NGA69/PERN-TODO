@@ -1,9 +1,8 @@
-import axios from "axios"
-import { useContext, useState } from "react"
+import { useState } from "react";
 import { useMutation } from "react-query"
-import { TodosContext } from "../Context/TodosProvider";
-import { api } from "../services/api"
 import { queryClient } from '../services/queryClient';
+import { api } from "../services/api"
+
 
 const InputTodo = () => {
     const [description, setDescription] = useState("")
@@ -24,9 +23,7 @@ const InputTodo = () => {
 
             // Modify cache to reflect this optimistic update
             if (previousTodos) {
-                const lastId = previousTodos.slice(-1)[0].todo_id
                 const nextTodos = previousTodos.push({description: newTodo })
-
                 queryClient.setQueryData("todos", old => [nextTodos, ...old])
 
             }

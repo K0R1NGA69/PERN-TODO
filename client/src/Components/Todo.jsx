@@ -1,11 +1,11 @@
-import { useContext, useEffect } from "react"
+import { useContext} from "react"
 import { TodosContext } from "../Context/TodosProvider"
 import {EditTodo} from "./EditTodo"
 import {DeleteTodo} from "./DeleteTodo"
 
 export const Todo = () => {
     const todosContext = useContext(TodosContext)
-    let {todos:{todos,isLoading,isError},setTodos} = todosContext
+    let {todos:{todos,isLoading},setTodos} = todosContext
     return (
         
         <>  
