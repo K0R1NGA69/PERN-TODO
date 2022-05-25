@@ -1,6 +1,6 @@
 # A Todo app made with PERN Stack
 
-
+![This is an image](/client/public/pern.png)
 
 
 ## Starting the Project
